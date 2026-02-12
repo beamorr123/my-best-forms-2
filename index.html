@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AUTOAVALIAÇÃO - MY BEST</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* MY BEST Brand Colors - Light Theme */
+            --my-blue: #00FFF2;
+            --my-black: #000000;
+            --my-dark: #00323C;
+            --my-silver: #DCE9DA;
+            --my-white: #FFFFFF;
+            --my-light-bg: #F8FAFA;
+            --my-card-bg: #FFFFFF;
+
+            /* RGB Values */
+            --my-blue-rgb: 0, 255, 242;
+            --my-dark-rgb: 0, 50, 60;
+
+            /* Spacing */
+            --spacing-xs: 8px;
+            --spacing-sm: 16px;
+            --spacing-md: 24px;
+            --spacing-lg: 32px;
+            --spacing-xl: 48px;
+
+            /* Typography */
+            --font-primary: 'Poppins', sans-serif;
+            --font-mono: 'Space Mono', monospace;
+
+            /* Borders */
+            --border-radius: 8px;
+            --border-radius-lg: 16px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-primary);
+            background: var(--my-light-bg);
+            color: var(--my-dark);
+            min-height: 100vh;
+            padding: var(--spacing-md);
+            line-height: 1.6;
+        }
+
+        /* Header */
+        .form-header {
+            max-width: 900px;
+            margin: 0 auto var(--spacing-xl);
+            text-align: center;
+            position: relative;
+            padding: var(--spacing-xl) var(--spacing-md);
+            background: var(--my-card-bg);
+            border-radius: var(--border-radius-lg);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .brand-logo {
+            font-size: 3.5rem;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: var(--spacing-sm);
+            background: linear-gradient(135deg, var(--my-blue) 0%, var(--my-dark) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-transform: uppercase;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                filter: drop-shadow(0 0 15px rgba(var(--my-blue-rgb), 0.2));
+            }
+            to {
+                filter: drop-shadow(0 0 25px rgba(var(--my-blue-rgb), 0.4));
+            }
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+            color: var(--my-dark);
+        }
+
+        .form-description {
+            color: #666;
+            font-size: 1rem;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* Accent Line */
+        .accent-line {
+            width: 100px;
+            height: 4px;
+            background: var(--my-blue);
+            margin: var(--spacing-md) auto;
+            border-radius: 2px;
+            box-shadow: 0 0 15px rgba(var(--my-blue-rgb), 0.4);
+        }
+
+        /* Form Container */
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--my-card-bg);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-xl);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Section Headers */
+        .section-header {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--my-dark);
+            margin: var(--spacing-xl) 0 var(--spacing-lg);
+            padding-bottom: var(--spacing-sm);
+            border-bottom: 3px solid var(--my-blue);
+            background: linear-gradient(90deg, rgba(var(--my-blue-rgb), 0.1) 0%, transparent 100%);
+            padding-left: var(--spacing-md);
+            border-radius: var(--border-radius);
+        }
+
+        .section-header:first-of-type {
+            margin-top: 0;
+        }
+
+        /* Question Block */
+        .question-block {
+            margin-bottom: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            background: var(--my-light-bg);
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--my-blue);
+            transition: all 0.3s ease;
+            animation: slideIn 0.5s ease-out backwards;
+        }
+
+        .question-block:hover {
+            background: #F0F8F8;
+            transform: translateX(4px);
+            box-shadow: -4px 0 15px rgba(var(--my-blue-rgb), 0.15);
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .question-label {
+            font-size: 1.05rem;
+            font-weight: 600;
+            color: var(--my-dark);
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: start;
+        }
+
+        .required-mark {
+            color: var(--my-blue);
+            margin-left: 4px;
+            font-size: 1.2rem;
+        }
+
+        .question-description {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: var(--spacing-md);
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        /* Input Fields */
+        .form-input,
+        .form-textarea,
+        .form-select {
+            width: 100%;
+            padding: var(--spacing-sm);
+            background: var(--my-white);
+            border: 2px solid #E0E0E0;
+            border-radius: var(--border-radius);
+            color: var(--my-dark);
+            font-family: var(--font-primary);
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus,
+        .form-textarea:focus,
+        .form-select:focus {
+            outline: none;
+            border-color: var(--my-blue);
+            background: var(--my-white);
+            box-shadow: 0 0 0 3px rgba(var(--my-blue-rgb), 0.1);
+        }
+
+        .form-input::placeholder,
+        .form-textarea::placeholder {
+            color: #999;
+        }
+
+        .form-textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Scale Input (0-10) */
+        .scale-input-container {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .scale-input {
+            width: 100px;
+            padding: var(--spacing-sm);
+            background: var(--my-white);
+            border: 2px solid #E0E0E0;
+            border-radius: var(--border-radius);
+            color: var(--my-dark);
+            font-family: var(--font-primary);
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .scale-input:focus {
+            outline: none;
+            border-color: var(--my-blue);
+            box-shadow: 0 0 0 3px rgba(var(--my-blue-rgb), 0.1);
+        }
+
+        .scale-label {
+            font-size: 0.9rem;
+            color: #666;
+            font-weight: 500;
+        }
+
+        /* Observations */
+        .observations-section {
+            margin-top: var(--spacing-md);
+            padding-top: var(--spacing-md);
+            border-top: 1px solid #E0E0E0;
+        }
+
+        .observations-label {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: var(--spacing-xs);
+            display: flex;
+            align-items: center;
+            font-weight: 500;
+        }
+
+        .observations-icon {
+            margin-right: var(--spacing-xs);
+            color: var(--my-blue);
+        }
+
+        /* Submit Button */
+        .submit-section {
+            margin-top: var(--spacing-xl);
+            text-align: center;
+            padding-top: var(--spacing-xl);
+            border-top: 2px solid #E0E0E0;
+        }
+
+        .submit-button {
+            padding: var(--spacing-md) var(--spacing-xl);
+            background: var(--my-blue);
+            color: var(--my-black);
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 1.1rem;
+            font-weight: 700;
+            font-family: var(--font-primary);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 15px rgba(var(--my-blue-rgb), 0.3);
+        }
+
+        .submit-button:hover {
+            background: var(--my-dark);
+            color: var(--my-blue);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 25px rgba(var(--my-blue-rgb), 0.4);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: #E0E0E0;
+            z-index: 1000;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: var(--my-blue);
+            transition: width 0.3s ease;
+            box-shadow: 0 0 10px rgba(var(--my-blue-rgb), 0.5);
+        }
+
+        /* Helper Text */
+        .helper-text {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: var(--spacing-xs);
+            font-style: italic;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .brand-logo {
+                font-size: 2.5rem;
+            }
+
+            .form-title {
+                font-size: 1.5rem;
+            }
+
+            .form-container {
+                padding: var(--spacing-md);
+            }
+
+            .question-block {
+                padding: var(--spacing-md);
+            }
+
+            .section-header {
+                font-size: 1.3rem;
+            }
+        }
+
+        /* Loading State */
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .loading .submit-button::after {
+            content: '';
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            margin-left: 8px;
+            border: 2px solid var(--my-black);
+            border-top-color: transparent;
+            border-radius: 50%;
+            animation: spin 0.6s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Success Message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: var(--spacing-xl);
+            background: rgba(var(--my-blue-rgb), 0.1);
+            border: 2px solid var(--my-blue);
+            border-radius: var(--border-radius-lg);
+            margin-top: var(--spacing-xl);
+        }
+
+        .success-message.show {
+            display: block;
+            animation: slideIn 0.5s ease-out;
+        }
+
+        .success-icon {
+            font-size: 4rem;
+            color: var(--my-blue);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .success-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--my-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .success-text {
+            color: #666;
+        }
+
+        /* Planning Section */
+        .planning-section {
+            background: rgba(var(--my-blue-rgb), 0.05);
+            padding: var(--spacing-lg);
+            border-radius: var(--border-radius);
+            margin-top: var(--spacing-lg);
+            border: 2px dashed var(--my-blue);
+        }
+
+        .planning-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: var(--my-dark);
+            margin-bottom: var(--spacing-md);
+        }
+    </style>
+</head>
+<body>
+    <!-- Progress Bar -->
+    <div class="progress-bar">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- Header -->
+    <div class="form-header">
+        <div class="brand-logo">MY BEST_</div>
+        <div class="accent-line"></div>
+        <h1 class="form-title">Autoavaliação</h1>
+        <p class="form-description">
+            Este formulário tem como objetivo avaliar seu desempenho e desenvolvimento pessoal.
+            Responda com honestidade e reflexão sobre suas experiências e aprendizados.
+        </p>
+    </div>
+
+    <!-- Form Container -->
+    <div class="form-container">
+        <form id="autoavaliacaoForm">
+
+            <!-- DADOS BÁSICOS -->
+            <h2 class="section-header">Dados Básicos</h2>
+
+            <!-- Email -->
+            <div class="question-block">
+                <label class="question-label">
+                    Endereço de e-mail
+                    <span class="required-mark">*</span>
+                </label>
+                <input
+                    type="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="seu.email@exemplo.com"
+                    required
+                >
+            </div>
+
+            <!-- Nome -->
+            <div class="question-block">
+                <label class="question-label">
+                    Nome Completo
+                    <span class="required-mark">*</span>
+                </label>
+                <input
+                    type="text"
+                    name="nome_completo"
+                    class="form-input"
+                    placeholder="Digite seu nome completo"
+                    required
+                >
+            </div>
+
+            <!-- Cargo -->
+            <div class="question-block">
+                <label class="question-label">
+                    Cargo
+                    <span class="required-mark">*</span>
+                </label>
+                <input
+                    type="text"
+                    name="cargo"
+                    class="form-input"
+                    placeholder="Seu cargo atual"
+                    required
+                >
+            </div>
+
+            <!-- SEÇÃO 1: APRESENTAÇÃO PESSOAL E CONDUTA -->
+            <h2 class="section-header">1. Apresentação Pessoal e Conduta</h2>
+
+            <!-- 1.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    1. Apresentação Pessoal
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Cuidados com higiene, postura, aparência e respeito ao espaço coletivo.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="apresentacao_pessoal"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="apresentacao_pessoal_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 1.2 -->
+            <div class="question-block">
+                <label class="question-label">
+                    2. Do uso do uniforme
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Uso correto, completo e adequado do uniforme durante o trabalho.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="uso_uniforme"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="uso_uniforme_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 1.3 -->
+            <div class="question-block">
+                <label class="question-label">
+                    3. Comunicação
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Clareza, educação, objetividade e cordialidade ao se comunicar.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="comunicacao"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="comunicacao_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 1.4 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4. Receptividade
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Atenção, simpatia e disponibilidade ao receber clientes e colegas.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="receptividade"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="receptividade_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 1.5 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5. Organização e Limpeza
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Zelo pelo ambiente de trabalho, materiais e equipamentos.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="organizacao_limpeza"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="organizacao_limpeza_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 1.6 -->
+            <div class="question-block">
+                <label class="question-label">
+                    6. Das Refeições
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Respeito aos horários, bom senso e cuidado com o ambiente de refeição.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="refeicoes"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="refeicoes_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 1.7 -->
+            <div class="question-block">
+                <label class="question-label">
+                    7. Do Uso do Telefone
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Com o propósito de garantir a melhor experiência ao cliente e a excelência na entrega, é proibido o uso do celular durante o horário de trabalho, tanto na área técnica quanto no balcão de atendimento.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="uso_telefone"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="uso_telefone_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 2: OPERAÇÃO TÉCNICA -->
+            <h2 class="section-header">2. Operação Técnica</h2>
+
+            <!-- 2.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    1. Apresentação
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Como se apresenta tecnicamente diante do cliente e da equipe.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="apresentacao_tecnica"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="apresentacao_tecnica_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.2 -->
+            <div class="question-block">
+                <label class="question-label">
+                    2. Receptividade
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Acolhimento cordial e profissional do cliente desde sua chegada até a despedida, garantindo padrão de excelência, postura adequada e respeito ao protocolo do estúdio.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="receptividade_tecnica"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="receptividade_tecnica_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.3 - PADRÃO POSTURAL -->
+            <h3 class="section-header" style="font-size: 1.2rem; margin-top: var(--spacing-lg);">3. Padrão Postural de Atendimento (PPA)</h3>
+
+            <!-- 2.3.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    3.1 Postura Corporal e Proatividade
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Atitude ativa, postura adequada e iniciativa durante o atendimento.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="postura_proatividade"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="postura_proatividade_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.3.2 -->
+            <div class="question-block">
+                <label class="question-label">
+                    3.2 Posicionamento e Distância
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Proximidade adequada do cliente e respeito ao espaço pessoal.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="posicionamento_distancia"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="posicionamento_distancia_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.3.3 -->
+            <div class="question-block">
+                <label class="question-label">
+                    3.3 Comunicação
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Clareza na transmissão das informações, escuta ativa e adequação da linguagem ao perfil do cliente.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="comunicacao_tecnica"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="comunicacao_tecnica_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4 - RESPONSABILIDADE E TREINAMENTO -->
+
+            <!-- 2.4.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.1 Da Responsabilidade
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="responsabilidade"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="responsabilidade_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.2 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.2 Do Trabalho em Equipe
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="trabalho_equipe"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="trabalho_equipe_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.3 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.3 Início do Treinamento
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="inicio_treinamento"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="inicio_treinamento_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.4 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.4 Periodização do Treinamento
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="periodizacao_treinamento"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="periodizacao_treinamento_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.5 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.5 Estrutura do Treinamento
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="estrutura_treinamento"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="estrutura_treinamento_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.6 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.6 Banca de Exercícios
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Diversificação, escolha e adaptação dos exercícios ao cliente.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="banca_exercicios"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="banca_exercicios_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.7 - USO INTELIGENTE DO ESPAÇO -->
+            <h3 class="section-header" style="font-size: 1.1rem; margin-top: var(--spacing-lg);">4.7 Uso Inteligente do Espaço</h3>
+
+            <!-- 2.4.7.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.7.1 Do direcionamento do cliente ao espaço adequado
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="direcionamento_espaco"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="direcionamento_espaco_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.7.2 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.7.2 Sobre não utilizar o revezamento de máquinas ou descanso ativo ao lado delas
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="revezamento_maquinas"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="revezamento_maquinas_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.7.3 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.7.3 Sobre preservar o espaço de circulação livre para os clientes e equipe técnica
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="espaco_circulacao"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="espaco_circulacao_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.7.4 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.7.4 Sobre não utilizar dois espaços simultaneamente para um único cliente
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="dois_espacos"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="dois_espacos_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- Continuação 4.8 a 4.12 -->
+
+            <!-- 2.4.8 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.8 Presença ativa durante o treino
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="presenca_ativa"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="presenca_ativa_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.9 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.9 Demonstração de exercícios
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="demonstracao_exercicios"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="demonstracao_exercicios_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.10 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.10 Manuseio dos equipamentos
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="manuseio_equipamentos"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="manuseio_equipamentos_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.11 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.11 Organização dos equipamentos
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="organizacao_equipamentos"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="organizacao_equipamentos_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 2.4.12 -->
+            <div class="question-block">
+                <label class="question-label">
+                    4.12 Encerramento com cordialidade
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="encerramento_cordialidade"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="encerramento_cordialidade_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 5: NORMAS DE CONDUTA -->
+            <h2 class="section-header">5. Normas de Conduta</h2>
+
+            <h3 class="section-header" style="font-size: 1.2rem;">5.1 Relação e Comunicação</h3>
+
+            <!-- 5.1.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.1.1 Criar vínculo pessoal, amizade íntima ou qualquer tipo de relação que ultrapasse o ambiente profissional
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="vinculo_pessoal"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="vinculo_pessoal_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 5.1.2 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.1.2 Trocar número de WhatsApp pessoal ou manter contato fora dos canais oficiais da MY BEST
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="contato_pessoal"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="contato_pessoal_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 5.1.3 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.1.3 Seguir, ser seguido ou interagir com clientes por meio de redes sociais pessoais
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="redes_sociais"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="redes_sociais_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 5.1.4 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.1.4 Compartilhar experiências pessoais íntimas
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="experiencias_intimas"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="experiencias_intimas_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <h3 class="section-header" style="font-size: 1.2rem;">5.2 Linguagem e Postura</h3>
+
+            <!-- 5.2.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.2.1 Utilizar diminutivos, apelidos ou qualquer forma de tratamento que comprometa a formalidade e o respeito na relação profissional
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="tratamento_informal"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="tratamento_informal_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 5.2.2 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.2.2 Manifestar comentários, brincadeiras ou insinuações de cunho sexual, pejorativo ou constrangedor
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="comentarios_inadequados"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="comentarios_inadequados_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 5.2.3 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.2.3 Emitir opiniões ou julgamentos sobre corpo, estética ou vida pessoal do cliente
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="julgamentos"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="julgamentos_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 5.2.4 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.2.4 Adotar postura informal que possa comprometer a autoridade e a credibilidade profissional
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="postura_informal"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="postura_informal_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <h3 class="section-header" style="font-size: 1.2rem;">5.3 Imagem e Privacidade</h3>
+
+            <!-- 5.3.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.3.1 Captar ou divulgar imagens de clientes sem consentimento formal, expresso e prévio
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="imagens_clientes"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="imagens_clientes_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 5.3.2 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.3.2 Compartilhar informações internas ou estratégicas da MY BEST com clientes
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="informacoes_internas"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="informacoes_internas_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 5.3.3 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.3.3 Expor vida pessoal íntima nas dependências da empresa ou durante o horário de trabalho
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="exposicao_vida_pessoal"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="exposicao_vida_pessoal_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <h3 class="section-header" style="font-size: 1.2rem;">5.4 Limites Fora da MY BEST</h3>
+
+            <!-- 5.4.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.4.1 Convidar clientes para encontros, eventos sociais ou atividades externas de caráter pessoal
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="convites_pessoais"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="convites_pessoais_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- 5.4.2 -->
+            <div class="question-block">
+                <label class="question-label">
+                    5.4.2 Captar clientes da MY BEST para prestação de serviços externos, paralelos ou concorrentes
+                    <span class="required-mark">*</span>
+                </label>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="captacao_clientes"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="captacao_clientes_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- SEÇÃO 6: PACTO SISTEMA -->
+            <h2 class="section-header">6. PACTO Sistema</h2>
+
+            <!-- 6.1 -->
+            <div class="question-block">
+                <label class="question-label">
+                    6.1 Pacto sistema – avaliações
+                    <span class="required-mark">*</span>
+                </label>
+                <p class="question-description">
+                    Registro e acompanhamento correto das avaliações no sistema.
+                </p>
+                <div class="scale-input-container">
+                    <input
+                        type="number"
+                        name="pacto_sistema"
+                        class="scale-input"
+                        min="0"
+                        max="10"
+                        placeholder="0-10"
+                        required
+                    >
+                    <span class="scale-label">Autoanálise (0–10)</span>
+                </div>
+                <div class="observations-section">
+                    <label class="observations-label">
+                        <span class="observations-icon">💬</span>
+                        Observação
+                    </label>
+                    <textarea
+                        name="pacto_sistema_obs"
+                        class="form-textarea"
+                        placeholder="Adicione suas observações..."
+                        rows="2"
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- PLANEJAMENTO DE EVOLUÇÃO -->
+            <h2 class="section-header">Planejamento de Evolução</h2>
+
+            <div class="planning-section">
+                <div class="question-block" style="background: transparent; padding: 0; margin-bottom: var(--spacing-md);">
+                    <label class="question-label">
+                        Pilares Fortes a Manter
+                        <span class="required-mark">*</span>
+                    </label>
+                    <p class="question-description">
+                        Liste os pontos fortes que você deseja manter e fortalecer
+                    </p>
+                    <textarea
+                        name="pilares_fortes"
+                        class="form-textarea"
+                        placeholder="Descreva seus pilares fortes..."
+                        rows="4"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="question-block" style="background: transparent; padding: 0; margin-bottom: var(--spacing-md);">
+                    <label class="question-label">
+                        Pilares para Evolução
+                        <span class="required-mark">*</span>
+                    </label>
+                    <p class="question-description">
+                        Identifique as áreas que precisam de desenvolvimento
+                    </p>
+                    <textarea
+                        name="pilares_evolucao"
+                        class="form-textarea"
+                        placeholder="Descreva as áreas para evolução..."
+                        rows="4"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="question-block" style="background: transparent; padding: 0; margin-bottom: var(--spacing-md);">
+                    <label class="question-label">
+                        Ações
+                        <span class="required-mark">*</span>
+                    </label>
+                    <p class="question-description">
+                        Que ações você irá tomar para evoluir?
+                    </p>
+                    <textarea
+                        name="acoes"
+                        class="form-textarea"
+                        placeholder="Descreva as ações planejadas..."
+                        rows="4"
+                        required
+                    ></textarea>
+                </div>
+
+                <div class="question-block" style="background: transparent; padding: 0;">
+                    <label class="question-label">
+                        Prazos e Acompanhamento
+                        <span class="required-mark">*</span>
+                    </label>
+                    <p class="question-description">
+                        Defina prazos e periodicidade de acompanhamento
+                    </p>
+                    <textarea
+                        name="prazos_acompanhamento"
+                        class="form-textarea"
+                        placeholder="Ex: Até 30/03/2026 revisar e melhorar...&#10;Até 15/04/2026 participar de treinamento...&#10;Feedback com supervisor(a) a cada quinzena..."
+                        rows="4"
+                        required
+                    ></textarea>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div class="submit-section">
+                <button type="submit" class="submit-button">
+                    Enviar Autoavaliação
+                </button>
+            </div>
+        </form>
+
+        <!-- Success Message -->
+        <div class="success-message" id="successMessage">
+            <div class="success-icon">✓</div>
+            <h2 class="success-title">Autoavaliação Enviada com Sucesso!</h2>
+            <p class="success-text">Obrigado por dedicar seu tempo para completar esta autoavaliação. Suas respostas foram registradas.</p>
+        </div>
+    </div>
+
+    <script>
+        // Form handling
+        const form = document.getElementById('autoavaliacaoForm');
+        const progressFill = document.getElementById('progressFill');
+        const successMessage = document.getElementById('successMessage');
+
+        // Update progress bar based on scroll
+        window.addEventListener('scroll', () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollPercent = (scrollTop / (documentHeight - windowHeight)) * 100;
+            progressFill.style.width = scrollPercent + '%';
+        });
+
+        // Validate scale inputs (0-10)
+        document.querySelectorAll('.scale-input').forEach(input => {
+            input.addEventListener('input', (e) => {
+                let value = parseInt(e.target.value);
+                if (value < 0) e.target.value = 0;
+                if (value > 10) e.target.value = 10;
+            });
+        });
+
+        // Form validation and submission
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            // Check if all required fields are filled
+            const requiredFields = form.querySelectorAll('[required]');
+            let allFilled = true;
+
+            requiredFields.forEach(field => {
+                if (!field.value || field.value.toString().trim() === '') {
+                    allFilled = false;
+                    field.style.borderColor = '#ff4444';
+                } else {
+                    field.style.borderColor = '#E0E0E0';
+                }
+            });
+
+            if (!allFilled) {
+                alert('Por favor, preencha todos os campos obrigatórios marcados com *');
+                // Scroll to first empty field
+                const firstEmpty = Array.from(requiredFields).find(f => !f.value || f.value.toString().trim() === '');
+                if (firstEmpty) {
+                    firstEmpty.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstEmpty.focus();
+                }
+                return;
+            }
+
+            // Add loading state
+            form.classList.add('loading');
+
+            // Collect form data
+            const formData = new FormData(form);
+            const data = {};
+
+            for (let [key, value] of formData.entries()) {
+                data[key] = value;
+            }
+
+            // Submit to Google Apps Script
+            fetch('https://script.google.com/macros/s/AKfycbwY16gOI3hq06X3dJaY5peHcwa6ThYoVB5BX8Q7PjZwOiV2F_Ic01U2ppg8f_nYJdYe0w/exec', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            })
+            .then(response => response.json())
+            .then(result => {
+                console.log('Success:', result);
+
+                // Hide form and show success message
+                form.style.display = 'none';
+                successMessage.classList.add('show');
+
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+
+                // Clear saved draft
+                localStorage.removeItem('autoavaliacao_draft');
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Erro ao enviar formulário. Por favor, tente novamente.');
+            })
+            .finally(() => {
+                form.classList.remove('loading');
+            });
+        });
+
+        // Auto-save functionality
+        let autoSaveTimeout;
+        const inputs = form.querySelectorAll('input, textarea');
+
+        inputs.forEach(input => {
+            input.addEventListener('input', () => {
+                clearTimeout(autoSaveTimeout);
+                autoSaveTimeout = setTimeout(() => {
+                    const formData = new FormData(form);
+                    const data = {};
+                    for (let [key, value] of formData.entries()) {
+                        data[key] = value;
+                    }
+                    localStorage.setItem('autoavaliacao_draft', JSON.stringify(data));
+                    console.log('Rascunho salvo automaticamente');
+                }, 1000);
+            });
+        });
+
+        // Load draft on page load
+        window.addEventListener('load', () => {
+            const savedDraft = localStorage.getItem('autoavaliacao_draft');
+            if (savedDraft) {
+                const shouldLoad = confirm('Encontramos um rascunho salvo. Deseja continuar de onde parou?');
+                if (shouldLoad) {
+                    const data = JSON.parse(savedDraft);
+                    Object.keys(data).forEach(key => {
+                        const field = form.querySelector(`[name="${key}"]`);
+                        if (field) {
+                            field.value = data[key];
+                        }
+                    });
+                    console.log('Rascunho carregado');
+                }
+            }
+        });
+    </script>
+</body>
+</html>
